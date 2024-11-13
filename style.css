@@ -1,0 +1,697 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Para que todos fiquem na mesma borda da caixa */
+}
+
+:root {
+    --fonte-01: 'Poppins', sans-serif;
+    --fonte-02: 'Merienda', cursive;
+    --fonte-03: 'Bebas Neue', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: black;
+    font-family: var(--fonte-01); /* Aplica a fonte principal */
+}
+
+/* Estilo do cabeçalho */
+header {
+    padding: 40px;
+    font-family: var(--fonte-01);
+    background-color: black;
+    box-shadow: 0 1px 0px green;
+    position: sticky;
+    top: 0;
+    z-index: 10; /* Garante que o header fique acima */
+}
+
+/* Ajuste para alinhar logo, container e outros elementos no cabeçalho */
+header > .interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite que elementos se reorganizem em telas menores */
+}
+
+.logo img {
+    height: 80px;
+    margin-left: 200px;
+}
+
+header a {
+    color: #5c5c5c;
+    text-decoration: none;
+    display: inline-block;
+    transition: .1.05s;
+}
+
+header a:hover {
+    color: #fff;
+    transform: scale(1.05);
+}
+
+header nav ul {
+    list-style-type: none;
+}
+
+header nav ul li {
+    display: inline-block;
+    padding: 0 40px;
+}
+
+.subtext {
+    text-align: center;
+    color: white;
+    font-family: var(--fonte-01); /* Escolha uma das fontes que já definiu */
+    font-size: 16px; /* Ajuste o tamanho da fonte como desejar */
+    margin-top: 10px; /* Espaçamento entre a frase e o conteúdo acima */
+}
+
+/* Estilos do botão */
+header .btn-contato button {
+    padding: 10px 40px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #5c5c5c;
+    border: 2px solid #5c5c5c;  
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: black;
+    margin-right: 200px;
+}
+
+header .btn-contato button:hover {
+    box-shadow: 0px 0px 8px;
+    color: #00ff0868;  /* Altera a cor do texto no hover */
+    border-color: #00ff0868;  /* A cor da borda muda para verde claro quando passar o mouse */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .logo img {
+        margin-left: 20px;
+        height: 60px;
+    }
+
+    .container {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    header nav ul li {
+        padding: 0 20px;
+    }
+
+    /* Para o botão de contato em telas menores, garantir que ele fique centralizado */
+    header .btn-contato {
+        margin-right: 0; /* Remove a margem para alinhar melhor */
+        justify-content: center;
+        width: 100%;
+    }
+
+    header .btn-contato button {
+        padding: 8px 20px;
+        font-size: 14px;
+        margin: 10px auto; /* Centraliza o botão */
+    }
+}
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 480px) {
+    header {
+        padding: 20px;
+    }
+
+    .logo img {
+        margin-left: 10px;
+        height: 50px;
+    }
+
+    .container {
+        font-size: 18px;
+    }
+
+    header nav ul li {
+        display: block;
+        padding: 10px 0;
+    }
+
+    header .btn-contato {
+        margin: 10px auto;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    header .btn-contato button {
+        width: 100%;
+        max-width: 150px; /* Limita a largura máxima */
+    }
+}
+
+/*---------------------------------------------------------------------------------*/
+
+
+/* Estilos para as divs sul e tech */
+.sul h1, .tech h1 {
+    color: white;
+    font-family: var(--fonte-03); /* Aplica a fonte "Bebas Neue" */
+}
+
+/* Container que envolve as divs sul e tech */
+.container {
+    display: flex; /* Usando Flexbox para alinhar as divs lado a lado */
+    justify-content: flex-start; /* Alinha as divs à esquerda */
+    gap: 10px; /* Espaço de 10px entre as divs */
+    align-items: center; /* Alinha as divs verticalmente ao centro */
+}
+
+/* Estilo da div .sul */
+.sul {
+    padding: 5px;      /* Padding para a div sul */
+    font-size: 20px;
+}
+
+.sul h1 {
+    color: white;
+    font-family: var(--fonte-03); /* Fonte personalizada */
+}
+
+/* Estilo da div .tech */
+.tech {
+    background-color: #0f650f;  /* Cor de fundo para a div tech */
+    padding: 5px 5px;       /* Padding para a div tech */
+    border-radius: 10px;
+}
+
+
+/* Estilo do menu desktop */
+
+header nav ul li a {
+    color: #5c5c5c;
+    text-decoration: none;
+    transition: .3s;
+}
+
+header nav ul li a:hover {
+    color: #fff;
+}
+
+header nav ul {
+    display: flex;
+    gap: 5px; /* Espaço entre os itens do menu */
+}
+
+/* Ajustes adicionais para o layout responsivo (se necessário) */
+@media (max-width: 768px) {
+    header > .interface {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+p {
+    color: white;
+}
+
+.placa-mae {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.placa-mae img {
+    max-width: 100%;  
+    height: auto;      
+}
+
+/*----------------------------------- MAIN ---------------------------------------------*/
+
+/* Estilos principais */
+
+.imagem-com-texto {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.imagem-principal img {
+    width: 100%;
+    margin-top: 3px;
+}
+
+.texto-sobre-imagem {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.texto-sobre-imagem h1 {
+    font-family: var(--fonte-03);
+    font-size: 100px;
+    color: #fff;
+}
+
+.texto-sobre-imagem h1 span {
+    color: #0f650f;
+}
+
+.texto-sobre-imagem p {
+    font-family: var(--fonte-01);
+    font-size: 5vw;
+    margin-top: 10px;
+}
+
+.tech-foto {
+    background-color: #004403;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 15px;
+}
+
+.texto-sobre-imagem h1 .tech-foto {
+    color: #fff;
+}
+
+.texto-sobre-imagem p {
+    font-size: 18px;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .texto-sobre-imagem h1 {
+        font-size: 80px; /* Ajusta o tamanho da fonte para telas menores */
+    }
+    .texto-sobre-imagem p {
+        font-size: 4vw; /* Ajusta o tamanho do texto do parágrafo para telas menores */
+    }
+}
+
+@media (max-width: 768px) {
+    .imagem-principal img {
+        width: 100%; /* Garante que a imagem ocupe toda a largura disponível em telas menores */
+    }
+    .texto-sobre-imagem {
+        top: 60%; /* Ajusta a posição do texto para que ele não sobreponha muito a imagem em telas pequenas */
+    }
+    .texto-sobre-imagem h1 {
+        font-size: 60px; /* Reduz o tamanho do título */
+    }
+    .texto-sobre-imagem p {
+        font-size: 18px; /* Ajusta o tamanho do parágrafo */
+    }
+}
+
+@media (max-width: 480px) {
+    .texto-sobre-imagem h1 {
+        font-size: 50px; /* Reduz ainda mais o tamanho do título */
+    }
+    .texto-sobre-imagem p {
+        font-size: 16px; /* Ajusta o parágrafo para telas muito pequenas */
+    }
+    .tech-foto {
+        font-size: 14px; /* Ajusta o tamanho do texto no <span> */
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+
+.efeito-js, .img-efeito-js, .efeito-tech-js, .efeito-js-p {
+    visibility: hidden;
+}
+
+.separador-main {
+    background-color: #004403;
+    height: 2px;
+    margin-top: 30px;
+}
+
+/*-------------------------------- Seção das imagens dos seviços ---------------------------------------*/
+
+.especialidades {
+    font-family: var(--fonte-03);
+    font-size: 20px;
+    color: #dbdbdb;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.imagem-computador {
+    display: flex;
+    padding: 100px; /* Adiciona espaçamento flexível nas laterais */
+    flex-wrap: wrap; /* Permite que o conteúdo quebre para a próxima linha, se necessário */
+}
+
+
+.imagem-computador img {
+    max-width: 500px; /* Ajuste a largura máxima para o tamanho desejado */
+    width: 100%; /* A imagem vai se ajustar à largura definida */
+    height: 400px;
+}
+
+.texto {
+    margin-left: 50px; /* Espaço entre a imagem e o texto */
+    max-width: 600px; /* Limita a largura do texto para não ultrapassar a área disponível */
+    font-family: Arial, sans-serif;
+}
+
+
+.texto p {
+    font-size: 16px; /* Tamanho da fonte */
+    line-height: 1.5; /* Espaçamento entre linhas */
+    color: #333; /* Cor do texto */
+}
+
+.texto ul {
+    list-style-type: none; /* Remove os marcadores padrão */
+    padding-left: 0; /* Remove o preenchimento da lista */
+    margin-top: 15px;
+    margin-top: 20px;
+}
+
+.texto li {
+    margin-bottom: 10px; /* Adiciona espaço entre os itens da lista */
+    margin-top: 10px;
+}
+
+.texto li strong {
+    font-size: 20px; /* Aumenta o tamanho do texto do título de cada serviço */
+    color: #0f650f; /* Cor azul para os títulos */
+}
+
+.texto li ul {
+    padding-left: 20px; /* Indenta os itens da sublista */
+    list-style-type: disc; /* Define os marcadores da sublista */
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.texto li ul li {
+    font-size: 18px; /* Ajusta o tamanho da fonte para os subitens */
+    color: white;
+}
+
+
+@media (max-width: 768px) {
+    .imagem-computador {
+        display: block; /* Faz a imagem e o texto ficarem empilhados em telas menores */
+        padding: 20px; /* Reduz o padding nas laterais */
+    }
+
+    .imagem-computador img {
+        width: 100%; /* Ajusta a imagem para ocupar 100% da largura disponível */
+        height: auto; /* Mantém a proporção da imagem */
+        max-width: 100%; /* Garantir que a imagem não ultrapasse a largura */
+    }
+
+    .texto {
+        margin-left: 0; /* Remove o espaço à esquerda para dispositivos móveis */
+        max-width: 100%; /* Ajusta a largura do texto para ocupar 100% */
+        padding-top: 20px; /* Adiciona um pequeno espaçamento no topo */
+    }
+
+    .especialidades {
+        font-size: 18px; /* Reduz o tamanho da fonte do título */
+    }
+
+    .texto h1 {
+        font-size: 24px; /* Ajusta o tamanho do título para caber melhor */
+    }
+
+    .texto p {
+        font-size: 14px; /* Reduz o tamanho da fonte do parágrafo */
+    }
+
+    .texto li {
+        font-size: 16px; /* Ajusta o tamanho da fonte dos itens da lista */
+    }
+
+    .texto li strong {
+        font-size: 18px; /* Reduz o tamanho da fonte dos títulos das especialidades */
+    }
+
+    .texto li ul li {
+        font-size: 16px; /* Ajusta o tamanho da fonte dos subitens */
+    }
+}
+
+@media (max-width: 480px) {
+    .especialidades {
+        font-size: 16px; /* Reduz ainda mais o tamanho do título em telas muito pequenas */
+    }
+
+    .texto h1 {
+        font-size: 20px; /* Ajusta o tamanho do título para telas menores */
+    }
+
+    .texto p {
+        font-size: 12px; /* Reduz o tamanho da fonte do parágrafo em telas pequenas */
+    }
+
+    .texto ul li {
+        font-size: 14px; /* Ajusta o tamanho da fonte dos itens da lista */
+    }
+
+    .texto li strong {
+        font-size: 16px; /* Ajusta o tamanho da fonte dos títulos das especialidades */
+    }
+}
+
+.separador-itens{ 
+    background-color: #5c5c5c;
+    height: 2px;
+    margin-left: 90px;
+    margin-right: 90px;
+}
+
+.imagem-celular {
+    display: flex;
+    padding: 100px;
+    flex-wrap: wrap;
+}
+
+.imagem-celular img {
+    max-width: 500px;
+    width: 100%;
+    height: 400px;
+}
+
+.texto {
+    margin-left: 50px;
+    max-width: 600px;
+    font-family: Arial, sans-serif;
+    font-size: 18px; /* Fonte padrão ajustada para 18px */
+}
+
+.texto h1 {
+    color: #dbdbdb;
+    margin-bottom: 40px;
+    font-size: 35px; /* Tamanho ajustado para 18px */
+}
+
+.texto p {
+    font-size: 18px; /* Ajustado para 18px */
+    line-height: 1.5;
+    color: #333;
+}
+
+.texto ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.texto li {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 18px; /* Ajustado para 18px */
+}
+
+.texto li strong {
+    font-size: 20px; /* Tamanho dos títulos das especialidades ajustado para 18px */
+    color: #0f650f;
+}
+
+.texto li ul {
+    padding-left: 20px;
+    list-style-type: disc;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.texto li ul li {
+    font-size: 18px; /* Tamanho dos subitens ajustado para 18px */
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .imagem-celular {
+        display: block;
+        padding: 20px;
+    }
+
+    .imagem-celular img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
+    .texto {
+        margin-left: 0;
+        max-width: 100%;
+        padding-top: 20px;
+    }
+
+    .texto h1 {
+        font-size: 20px; /* Ajustado para 18px em telas menores */
+    }
+
+    .texto p {
+        font-size: 18px; /* Ajustado para 18px em telas menores */
+    }
+
+    .texto li {
+        font-size: 18px; /* Ajustado para 18px em telas menores */
+    }
+
+    .texto li strong {
+        font-size: 18px; /* Ajustado para 18px em telas menores */
+    }
+
+    .texto li ul li {
+        font-size: 18px; /* Ajustado para 18px em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .texto h1 {
+        font-size: 18px; /* Ajustado para 18px em telas muito pequenas */
+    }
+
+    .texto p {
+        font-size: 18px; /* Ajustado para 18px em telas muito pequenas */
+    }
+
+    .texto ul li {
+        font-size: 18px; /* Ajustado para 18px em telas muito pequenas */
+    }
+
+    .texto li strong {
+        font-size: 18px; /* Ajustado para 18px em telas muito pequenas */
+    }
+}
+
+
+
+/* Estilo simples para o footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p img {
+    height: 25px;
+}
+
+.separador-contato {
+    height: 2px;
+    background-color: #0f650f;
+    margin-bottom: 30px;
+}
+
+.borda-contato {
+    width: 100%;
+}
+
+.contato {
+    text-align: center;
+    font-size: larger;
+}
+
+.contato h1 {
+    color: #5c5c5c;
+    margin-bottom: 80px;
+}
+
+.endereco p img {
+    height: 25px;
+}
+
+.endereco p a {
+    color: white;
+    text-decoration: none;
+}
+
+
+.conteudo {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.endereco {
+    flex: 1;
+    padding-right: 20px; /* Espaço entre o texto e o mapa */
+}
+
+.mapa {
+    flex: 1;
+    min-width: 300px; /* Define uma largura mínima para o iframe */
+    height: 400px;
+    margin-right: 70px;  /* Espaço à direita do mapa */
+    margin-bottom: 50px; /* Espaço abaixo do mapa */
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+@media (max-width: 768px) {
+    .conteudo {
+        flex-direction: column; /* Coloca as colunas em layout vertical */
+        gap: 20px; /* Adiciona um espaço entre as colunas */
+    }
+
+    .endereco {
+        padding-right: 0; /* Remove o padding direito em telas pequenas */
+    }
+
+    .mapa {
+        margin-right: 0; /* Remove a margem direita no mapa */
+        margin-left: 20px; /* Adiciona margem esquerda para não colar no lado esquerdo */
+    }
+}
